@@ -32,8 +32,7 @@ body {
   font-size: 15px;
   line-height: 1.9;
   overflow-x: hidden;
-  /* フローティングCTA分の余白 */
-  padding-bottom: 72px;
+  padding-bottom: 0;
 }
 
 img {
@@ -114,10 +113,6 @@ img {
   object-position: center 20%;
 }
 
-/* ── CTA TOP ── */
-.cta-top {
-  padding: 24px var(--sp) 28px;
-}
 .btn {
   display: block;
   width: 100%;
@@ -146,13 +141,6 @@ img {
   background: var(--tr);
   color: #fff;
 }
-.btn-note {
-  font-size: 0.7rem;
-  color: var(--faint);
-  text-align: center;
-  letter-spacing: 0.1em;
-}
-
 /* ── SECTIONS ── */
 .sec {
   padding: 44px var(--sp);
@@ -169,25 +157,11 @@ img {
 }
 
 .tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.tag::before {
-  content: "";
   display: block;
   width: 16px;
   height: 1px;
   background: var(--tr);
-}
-.tag span {
-  font-family: "IM Fell English", serif;
-  font-style: italic;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  color: var(--tr);
-  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 .sh {
   font-family: "Zen Old Mincho", serif;
@@ -259,6 +233,20 @@ img {
   margin-top: 10px;
 }
 
+/* ── ABOUT FLOW ── */
+.about-flow {
+  background: rgba(164, 92, 67, 0.06);
+  border-radius: 10px;
+  padding: 20px 18px;
+  text-align: center;
+  margin: 8px 0 18px;
+}
+.about-flow p {
+  font-size: 0.88rem;
+  color: var(--sub);
+  line-height: 2.4;
+}
+
 /* ── PROSE ── */
 .prose {
   font-size: 0.88rem;
@@ -303,7 +291,7 @@ img {
   background: var(--card);
   border-radius: 12px;
   padding: 18px 16px;
-  margin-bottom: 4px;
+  margin-bottom: 14px;
   border-left: 3px solid var(--ln);
 }
 .layer-card.l1 {
@@ -314,15 +302,6 @@ img {
 }
 .layer-card.l3 {
   border-left-color: #9c7e6a;
-}
-.layer-num {
-  font-family: "IM Fell English", serif;
-  font-style: italic;
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
-  color: var(--faint);
-  text-transform: uppercase;
-  margin-bottom: 5px;
 }
 .layer-title {
   font-family: "Zen Old Mincho", serif;
@@ -349,12 +328,6 @@ img {
   padding: 2px 9px;
   border-radius: 20px;
   line-height: 1.9;
-}
-.layer-arrow {
-  text-align: center;
-  padding: 6px 0;
-  color: var(--trl);
-  font-size: 0.8rem;
 }
 
 .flow-box {
@@ -409,6 +382,11 @@ img {
   color: var(--sub);
   line-height: 2;
   border-radius: 0 6px 6px 0;
+}
+
+.note {
+  font-size: 0.72em;
+  color: var(--faint);
 }
 
 /* ── PRICE ── */
@@ -548,36 +526,6 @@ img {
   margin-bottom: 0;
 }
 
-/* ── 1DAY ── */
-.oneday-box {
-  border: 1px solid rgba(56, 51, 46, 0.1);
-  background: var(--card);
-  padding: 24px 18px;
-  border-radius: 14px;
-}
-.oneday-label {
-  font-family: "IM Fell English", serif;
-  font-style: italic;
-  font-size: 0.63rem;
-  letter-spacing: 0.3em;
-  color: var(--tr);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  display: block;
-}
-.oneday-title {
-  font-family: "Zen Old Mincho", serif;
-  font-size: 0.93rem;
-  color: var(--text);
-  margin-bottom: 8px;
-  line-height: 1.8;
-}
-.oneday-body {
-  font-size: 0.8rem;
-  color: var(--sub);
-  line-height: 2;
-  margin-bottom: 16px;
-}
 
 /* ── CTA SECTION ── */
 .cta-head {
@@ -695,45 +643,6 @@ footer {
   letter-spacing: 0.1em;
 }
 
-/* ── FLOATING CTA ── */
-.floating {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--card);
-  border-top: 1px solid var(--ln);
-  padding: 10px 16px;
-  display: flex;
-  gap: 10px;
-  z-index: 100;
-}
-.floating a {
-  flex: 1;
-  padding: 12px;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 0.82rem;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  font-family: "Shippori Mincho B1", serif;
-  transition: all 0.3s;
-}
-.floating .primary {
-  background: var(--tr);
-  color: #fff;
-}
-.floating .primary:hover {
-  background: var(--text);
-}
-.floating .ghost {
-  border: 1px solid var(--tr);
-  color: var(--tr);
-}
-.floating .ghost:hover {
-  background: var(--tr);
-  color: #fff;
-}
 
 /* ── REVEAL ── */
 .rv {
@@ -765,9 +674,6 @@ footer {
     font-size: 16px;
     padding-bottom: 0;
   }
-  .floating {
-    display: none;
-  }
   .hero {
     padding: 100px 8vw 48px;
   }
@@ -785,9 +691,6 @@ footer {
     width: auto;
     padding-left: 40px;
     padding-right: 40px;
-  }
-  .cta-top {
-    text-align: center;
   }
   .prof-img {
     width: 160px;
