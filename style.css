@@ -1,0 +1,796 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f9f5ef;
+  --bgd: #f1ebe0;
+  --ln: #e6ddd2;
+  --card: #ffffff;
+  --text: #38332e;
+  --sub: #5f5850;
+  --faint: #988e84;
+  --tr: #a45c43;
+  --trl: #c27e65;
+  --trp: #ead4c8;
+  --ms: #6a7a5e;
+  --msp: #dee6d8;
+  --sp: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Shippori Mincho B1", serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow-x: hidden;
+  /* フローティングCTA分の余白 */
+  padding-bottom: 72px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 64px var(--sp) 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-eyebrow {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--tr);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 0.3s;
+}
+.hero h1 {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.75rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 0.6s;
+}
+.hero-sub {
+  font-size: 0.8rem;
+  color: var(--sub);
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 0.8s;
+}
+.hero-line {
+  width: 36px;
+  height: 1px;
+  background: var(--tr);
+  margin: 0 auto 20px;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 1s;
+}
+.hero-tagline {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.95rem;
+  color: var(--sub);
+  line-height: 2;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 1.1s;
+}
+.hero-tagline small {
+  font-size: 0.75em;
+  color: var(--faint);
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── HERO IMAGE ── */
+.hero-img {
+  margin: 28px calc(var(--sp) * -1) 0;
+  height: 300px;
+  overflow: hidden;
+  opacity: 0;
+  animation: fu 0.9s ease forwards 1.3s;
+}
+.hero-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* ── CTA TOP ── */
+.cta-top {
+  padding: 24px var(--sp) 28px;
+}
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+.btn-primary {
+  background: var(--tr);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--text);
+}
+.btn-ghost {
+  border: 1px solid var(--tr);
+  color: var(--tr);
+}
+.btn-ghost:hover {
+  background: var(--tr);
+  color: #fff;
+}
+.btn-note {
+  font-size: 0.7rem;
+  color: var(--faint);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+/* ── SECTIONS ── */
+.sec {
+  padding: 44px var(--sp);
+}
+.sec-dk {
+  background: var(--bgd);
+}
+.sec-tp {
+  background: var(--trp);
+}
+.sec-ln {
+  background: var(--ln);
+  padding: 40px var(--sp);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.tag::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--tr);
+}
+.tag span {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--tr);
+  text-transform: uppercase;
+}
+.sh {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--ln);
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin-bottom: 14px;
+}
+.card-label {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.63rem;
+  letter-spacing: 0.3em;
+  color: var(--tr);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.card-title {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.card-body {
+  font-size: 0.85rem;
+  color: var(--sub);
+  line-height: 2.1;
+}
+.card-body p {
+  margin-bottom: 10px;
+}
+.card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── WHOM LIST ── */
+.whom-list {
+  list-style: none;
+}
+.whom-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--ln);
+  font-size: 0.88rem;
+  color: var(--sub);
+  line-height: 1.9;
+}
+.whom-item:first-child {
+  border-top: 1px solid var(--ln);
+}
+.whom-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--tr);
+  flex-shrink: 0;
+  margin-top: 10px;
+}
+
+/* ── PROSE ── */
+.prose {
+  font-size: 0.88rem;
+  color: var(--sub);
+  line-height: 2.5;
+}
+.prose p {
+  margin-bottom: 18px;
+}
+.prose p:last-child {
+  margin-bottom: 0;
+}
+.pull {
+  border-left: 2px solid var(--tr);
+  padding: 16px 16px 16px 18px;
+  background: rgba(234, 212, 200, 0.35);
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+.pull p {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.95rem;
+  color: var(--tr);
+  line-height: 2;
+}
+
+/* ── FULL IMAGE ── */
+.full-img {
+  margin: 0 calc(var(--sp) * -1);
+  height: 260px;
+  overflow: hidden;
+}
+.full-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center 55%;
+}
+
+/* ── LAYER CARDS ── */
+.layer-card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 4px;
+  border-left: 3px solid var(--ln);
+}
+.layer-card.l1 {
+  border-left-color: var(--tr);
+}
+.layer-card.l2 {
+  border-left-color: var(--ms);
+}
+.layer-card.l3 {
+  border-left-color: #9c7e6a;
+}
+.layer-num {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--faint);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.layer-title {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+.layer-body {
+  font-size: 0.82rem;
+  color: var(--sub);
+  line-height: 2;
+  margin-bottom: 10px;
+}
+.layer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.layer-tag {
+  font-size: 0.68rem;
+  color: var(--sub);
+  background: var(--bgd);
+  padding: 2px 9px;
+  border-radius: 20px;
+  line-height: 1.9;
+}
+.layer-arrow {
+  text-align: center;
+  padding: 6px 0;
+  color: var(--trl);
+  font-size: 0.8rem;
+}
+
+.flow-box {
+  background: var(--text);
+  padding: 22px 18px;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+.flow-main {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.85rem;
+  color: var(--bg);
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+  margin-bottom: 6px;
+}
+.flow-sub {
+  font-size: 0.68rem;
+  color: rgba(249, 245, 239, 0.4);
+  line-height: 2;
+}
+
+/* ── PROG LIST ── */
+.prog-list {
+  list-style: none;
+  margin-top: 10px;
+}
+.prog-list li {
+  font-size: 0.82rem;
+  color: var(--sub);
+  line-height: 1.9;
+  padding: 7px 0 7px 14px;
+  position: relative;
+  border-bottom: 1px solid var(--ln);
+}
+.prog-list li:last-child {
+  border-bottom: none;
+}
+.prog-list li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--tr);
+}
+.prog-highlight {
+  background: var(--msp);
+  border-left: 2px solid var(--ms);
+  padding: 12px 14px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--sub);
+  line-height: 2;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── PRICE ── */
+.price-card {
+  background: var(--card);
+  border-radius: 14px;
+  border-bottom: 2px solid var(--tr);
+  padding: 24px 18px;
+  margin-bottom: 16px;
+}
+.price-lead {
+  font-size: 0.82rem;
+  color: var(--sub);
+  line-height: 2.2;
+  margin-bottom: 18px;
+}
+.price-lead p {
+  margin-bottom: 10px;
+}
+.price-includes {
+  list-style: none;
+  margin-bottom: 16px;
+}
+.price-includes li {
+  font-size: 0.8rem;
+  color: var(--sub);
+  line-height: 1.9;
+  padding: 6px 0 6px 14px;
+  position: relative;
+  border-bottom: 1px solid var(--ln);
+}
+.price-includes li:last-child {
+  border-bottom: none;
+}
+.price-includes li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--trl);
+}
+.price-amount {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.6rem;
+  color: var(--tr);
+}
+.price-tax {
+  font-size: 0.65rem;
+  color: var(--faint);
+  margin-left: 4px;
+}
+.price-notes {
+  font-size: 0.75rem;
+  color: var(--sub);
+  line-height: 2;
+}
+.price-notes p {
+  margin-bottom: 4px;
+}
+
+/* ── VOICES ── */
+.voice-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--ln);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.voice-mark {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.3rem;
+  color: var(--trl);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: -1px;
+}
+.voice-text {
+  font-size: 0.88rem;
+  color: var(--sub);
+  line-height: 2;
+}
+.voices-close {
+  background: var(--msp);
+  border-left: 3px solid var(--ms);
+  padding: 20px 16px;
+  margin-top: 28px;
+  border-radius: 0 10px 10px 0;
+}
+.voices-close p {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.93rem;
+  color: var(--sub);
+  line-height: 2.2;
+}
+
+/* ── PROFILE ── */
+.prof-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid var(--ln);
+}
+.prof-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.prof-name {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.prof-en {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  color: var(--tr);
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.prof-body {
+  font-size: 0.88rem;
+  color: var(--sub);
+  line-height: 2.5;
+}
+.prof-body p {
+  margin-bottom: 18px;
+}
+.prof-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── 1DAY ── */
+.oneday-box {
+  border: 1px solid rgba(56, 51, 46, 0.1);
+  background: var(--card);
+  padding: 24px 18px;
+  border-radius: 14px;
+}
+.oneday-label {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 0.63rem;
+  letter-spacing: 0.3em;
+  color: var(--tr);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.oneday-title {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.93rem;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+.oneday-body {
+  font-size: 0.8rem;
+  color: var(--sub);
+  line-height: 2;
+  margin-bottom: 16px;
+}
+
+/* ── CTA SECTION ── */
+.cta-head {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+.cta-body {
+  font-size: 0.85rem;
+  color: var(--sub);
+  line-height: 2.2;
+  margin-bottom: 28px;
+}
+.cta-steps {
+  margin-bottom: 28px;
+}
+.cta-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ln);
+}
+.cta-step:first-child {
+  border-top: 1px solid var(--ln);
+}
+.step-n {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--tr);
+  min-width: 18px;
+  line-height: 1.3;
+  opacity: 0.7;
+}
+.step-b {
+  font-size: 0.85rem;
+  color: var(--sub);
+  line-height: 2;
+  padding-top: 2px;
+}
+.cta-close {
+  font-size: 0.82rem;
+  color: var(--sub);
+  line-height: 2;
+  margin-top: 18px;
+  text-align: center;
+}
+
+/* ── LEGAL ── */
+.legal {
+  background: var(--bgd);
+  padding: 44px var(--sp);
+  border-top: 1px solid var(--ln);
+}
+details {
+  border-bottom: 1px solid var(--ln);
+  padding: 13px 0;
+}
+details:first-of-type {
+  border-top: 1px solid var(--ln);
+}
+summary {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--faint);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "+";
+  color: var(--tr);
+  transition: transform 0.3s;
+}
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+.legal-body {
+  font-size: 0.73rem;
+  color: var(--faint);
+  line-height: 2.2;
+  margin-top: 10px;
+}
+.legal-body p {
+  margin-bottom: 4px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--text);
+  padding: 32px var(--sp);
+  text-align: center;
+  /* フローティングCTA分の余白確保済み */
+}
+.foot-logo {
+  font-family: "IM Fell English", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--bg);
+  letter-spacing: 0.25em;
+  margin-bottom: 6px;
+}
+.foot-copy {
+  font-size: 0.6rem;
+  color: rgba(249, 245, 239, 0.25);
+  letter-spacing: 0.1em;
+}
+
+/* ── FLOATING CTA ── */
+.floating {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--card);
+  border-top: 1px solid var(--ln);
+  padding: 10px 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+.floating a {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-family: "Shippori Mincho B1", serif;
+  transition: all 0.3s;
+}
+.floating .primary {
+  background: var(--tr);
+  color: #fff;
+}
+.floating .primary:hover {
+  background: var(--text);
+}
+.floating .ghost {
+  border: 1px solid var(--tr);
+  color: var(--tr);
+}
+.floating .ghost:hover {
+  background: var(--tr);
+  color: #fff;
+}
+
+/* ── REVEAL ── */
+.rv {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.rv.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --sp: 8vw;
+  }
+  body {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+  .floating {
+    display: none;
+  }
+  .hero {
+    padding: 100px 8vw 48px;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  .hero-img {
+    height: 420px;
+  }
+  .hero-img img {
+    height: 420px;
+  }
+  .btn {
+    display: inline-block;
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .cta-top {
+    text-align: center;
+  }
+  .prof-img {
+    width: 160px;
+    height: 160px;
+  }
+}
