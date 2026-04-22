@@ -47,6 +47,21 @@ body {
   line-height: 1.9;
   overflow-x: hidden;
   padding-bottom: 0;
+  text-wrap: pretty;
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
+h1,
+h2,
+h3,
+h4,
+.sh,
+.card-title,
+.layer-title,
+.prof-name,
+.cta-head {
+  text-wrap: balance;
 }
 
 img {
