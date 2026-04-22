@@ -10,7 +10,7 @@
   --bg: #f9f5ef;
   --bgd: #f1ebe0;
   --ln: #e6ddd2;
-  --card: #ffffff;
+  --card: #fefcf7;
   --text: #38332e;
   --sub: #5f5850;
   --faint: #988e84;
@@ -27,7 +27,21 @@ html {
 }
 body {
   font-family: "Shippori Mincho B1", serif;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 3px,
+      rgba(164, 92, 67, 0.014) 3px,
+      rgba(164, 92, 67, 0.014) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 3px,
+      rgba(56, 51, 46, 0.008) 3px,
+      rgba(56, 51, 46, 0.008) 4px
+    );
   color: var(--text);
   font-size: 15px;
   line-height: 1.9;
@@ -165,19 +179,24 @@ img {
 }
 .sh {
   font-family: "Zen Old Mincho", serif;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text);
   line-height: 1.7;
-  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--ln);
 }
 
 /* ── CARD ── */
 .card {
   background: var(--card);
-  border: 1px solid var(--ln);
+  border: 1px solid rgba(230, 221, 210, 0.55);
   border-radius: 14px;
   padding: 20px 18px;
   margin-bottom: 14px;
+  box-shadow: 0 2px 20px rgba(56, 51, 46, 0.06),
+    0 1px 3px rgba(56, 51, 46, 0.04);
 }
 .card-label {
   font-family: "IM Fell English", serif;
@@ -235,16 +254,18 @@ img {
 
 /* ── ABOUT FLOW ── */
 .about-flow {
-  background: rgba(164, 92, 67, 0.06);
-  border-radius: 10px;
-  padding: 20px 18px;
+  border-top: 1px solid var(--ln);
+  border-bottom: 1px solid var(--ln);
+  padding: 24px 4px;
   text-align: center;
-  margin: 8px 0 18px;
+  margin: 14px 0 22px;
 }
 .about-flow p {
-  font-size: 0.88rem;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.92rem;
   color: var(--sub);
   line-height: 2.4;
+  letter-spacing: 0.04em;
 }
 
 /* ── PROSE ── */
@@ -260,11 +281,11 @@ img {
   margin-bottom: 0;
 }
 .pull {
-  border-left: 2px solid var(--tr);
-  padding: 16px 16px 16px 18px;
-  background: rgba(234, 212, 200, 0.35);
-  margin: 24px 0;
-  border-radius: 0 8px 8px 0;
+  border-left: 3px solid var(--tr);
+  padding: 18px 16px 18px 22px;
+  background: rgba(234, 212, 200, 0.28);
+  margin: 28px 0;
+  border-radius: 0 6px 6px 0;
 }
 .pull p {
   font-family: "Zen Old Mincho", serif;
@@ -290,9 +311,11 @@ img {
 .layer-card {
   background: var(--card);
   border-radius: 12px;
-  padding: 18px 16px;
+  padding: 20px 18px;
   margin-bottom: 14px;
   border-left: 3px solid var(--ln);
+  box-shadow: 0 1px 14px rgba(56, 51, 46, 0.05),
+    0 1px 3px rgba(56, 51, 46, 0.03);
 }
 .layer-card.l1 {
   border-left-color: var(--tr);
@@ -394,8 +417,10 @@ img {
   background: var(--card);
   border-radius: 14px;
   border-bottom: 2px solid var(--tr);
-  padding: 24px 18px;
+  padding: 26px 20px;
   margin-bottom: 16px;
+  box-shadow: 0 2px 22px rgba(56, 51, 46, 0.07),
+    0 1px 4px rgba(56, 51, 46, 0.04);
 }
 .price-lead {
   font-size: 0.82rem;
