@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(py --version)",
+      "Bash(python -m http.server 5500)"
     ]
   }
 }

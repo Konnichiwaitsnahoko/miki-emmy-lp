@@ -507,6 +507,41 @@ img {
   color: var(--sub);
   line-height: 2;
 }
+.voices-long {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.voice-long {
+  background: var(--bgd);
+  border-left: 3px solid var(--trl);
+  padding: 22px 20px 20px;
+  border-radius: 0 10px 10px 0;
+}
+.voice-long-title {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--trl);
+  line-height: 1.85;
+  margin-bottom: 14px;
+  text-wrap: pretty;
+}
+.voice-long-body {
+  font-size: 0.85rem;
+  color: var(--sub);
+  line-height: 2;
+  margin-bottom: 14px;
+  text-wrap: pretty;
+}
+.voice-long-meta {
+  font-size: 0.78rem;
+  color: var(--sub);
+  text-align: right;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
 .voices-close {
   background: var(--msp);
   border-left: 3px solid var(--ms);
