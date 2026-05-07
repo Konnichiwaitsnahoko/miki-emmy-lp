@@ -389,6 +389,73 @@ img {
   line-height: 2;
 }
 
+/* ── VENN ── */
+.venn {
+  margin: 8px auto 28px;
+  text-align: center;
+}
+.venn-svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.venn-c {
+  stroke-width: 0.7;
+}
+.venn-c-1 {
+  fill: rgba(164, 92, 67, 0.18);
+  stroke: rgba(164, 92, 67, 0.55);
+}
+.venn-c-2 {
+  fill: rgba(106, 122, 94, 0.18);
+  stroke: rgba(106, 122, 94, 0.55);
+}
+.venn-c-3 {
+  fill: rgba(156, 126, 106, 0.2);
+  stroke: rgba(156, 126, 106, 0.6);
+}
+.venn-label {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  fill: var(--text);
+}
+.venn-sub {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  fill: var(--faint);
+}
+.venn-center {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  fill: var(--tr);
+  font-weight: 700;
+}
+.venn-caption {
+  font-family: "Zen Old Mincho", serif;
+  font-size: 0.82rem;
+  color: var(--sub);
+  line-height: 2;
+  margin-top: 14px;
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 640px) {
+  .venn-svg {
+    max-width: 420px;
+  }
+  .venn-label {
+    font-size: 15px;
+  }
+  .venn-center {
+    font-size: 13px;
+  }
+}
+
 /* ── PROG LIST ── */
 .prog-list {
   list-style: none;
